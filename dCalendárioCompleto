@@ -5,7 +5,9 @@ let
 // A Maior data você pode deixar dinâmico conforme o ano atual, mudando DataFim = Date.EndOfYear(MaiorData), para DataFim = Date.From(Date.EndOfYear(DateTime.LocalNow())
 // Caso utilize as opções acima, pode comentar o parâmetro Datas, MenorData e MaiorData
 
-
+// Ir até o Power Query e clicar em Nova Fonte de Dados. Ou, botão direito do mouse, nova consulta e Consulta Nula.
+// Clicar em "Consulta Nula".
+// Clicar com o bostão direito em "Editor Avançado" e colar o código.
 
 
 // Criando uma lista de Datas únicas e Bufferizando (atualizar o fVendas[Data] para a data principal, no caso, data de admissão).
