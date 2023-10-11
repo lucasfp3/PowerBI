@@ -1,0 +1,3 @@
+Faturamento = SUMX(fVendas, fVendas[ValorUnitario] * fVendas[QtdItens] - fVendas[DescontoItem])
+
+-- Somando linha por linha com SUMX, fazendo sua multiplicação e subtraindo o valor do desconto
