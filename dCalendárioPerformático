@@ -1,3 +1,7 @@
+// Ir até o Power Query e clicar em Nova Fonte de Dados. Ou, botão direito do mouse, nova consulta e Consulta Nula.
+// Clicar em "Consulta Nula".
+// Clicar com o bostão direito em "Editor Avançado" e colar o código.
+
 let
     MenorData = #date(2017,01,01),
     MaiorData = Date.From(Date.EndOfYear(DateTime.LocalNow())),
