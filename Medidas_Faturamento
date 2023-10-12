@@ -1,0 +1,29 @@
+Faturamento = SUMX(fVendas, fVendas[ValorUnitario] * fVendas[QtdItens] - fVendas[DescontoItem])
+
+-- Somando linha por linha com SUMX, fazendo sua multiplicação e subtraindo o valor do desconto
+
+
+##
+
+Faturamento SPLY = CALCULATE(
+    [Faturamento],
+    SAMEPERIODLASTYEAR('dCalendário'[Data])
+)
+
+-- O Calculate tem como pilar a base de valores, e já calcula o mesmo período do ano passado com SAMEPERIODLASTYEAR
+
+##
+
+Media Movel = AVERAGEX(
+    DATESINPERIOD('dCalendário'[Data],
+    LASTDATE('dCalendário'[Data]),
+    -[Valor Dias],
+    DAY
+    ),
+    [Faturamento]
+)
+
+-- A Média Móvel precisa ser calculada a partir da média linha a linha, por isso o AVERAGEX.
+-- Utilziando a DATESINPERIOD, conseguimos otimizar a busca baseada nos filtros aplicados.
+-- O LASTDATE seria a data final escolhida no filtro.
+-- O [Valor Dias] foi um PARÂMETRO criado para facilitar a inserção dos dias para cálculo, tornando tudo dinâmico.
